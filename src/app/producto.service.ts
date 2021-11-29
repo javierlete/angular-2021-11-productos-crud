@@ -8,10 +8,14 @@ import { Producto } from './producto';
 })
 export class ProductoService {
   private url = 'http://localhost:3000/productos/';
-
+  
   constructor(private http: HttpClient) { }
-
+  
   obtenerProductos(): Observable<Producto[]> {
     return this.http.get<Producto[]>(this.url);
+  }
+  
+  obtenerPorId(id: number): Observable<Producto> {
+    return this.http.get<Producto>(this.url + id);
   }
 }
