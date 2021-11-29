@@ -1,0 +1,16 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Portátil",
+      "precio": 543.45,
+      "fechaCaducidad": "2021-01-02"
+    },
+    {
+      "id": 2,
+      "nombre": "Ratón",
+      "precio": 12.45,
+      "fechaCaducidad": "2021-03-04"
+    }
+  ]
+}
