@@ -9,6 +9,7 @@ import { ListadoComponent } from './listado/listado.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import { FormsModule } from '@angular/forms';
 
 registerLocaleData(localeEs, 'es');
 
@@ -21,7 +22,8 @@ registerLocaleData(localeEs, 'es');
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'es-ES' }],
   bootstrap: [AppComponent]

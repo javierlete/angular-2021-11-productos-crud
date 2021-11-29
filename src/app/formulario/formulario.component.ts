@@ -10,7 +10,12 @@ import { ProductoService } from '../producto.service';
 })
 export class FormularioComponent implements OnInit {
 
-  producto?: Producto;
+  producto: Producto = {
+    id: 0,
+    nombre: '',
+    precio: 0,
+    fechaCaducidad: new Date()
+  };
 
   constructor(private route: ActivatedRoute, private productoService: ProductoService) { }
 

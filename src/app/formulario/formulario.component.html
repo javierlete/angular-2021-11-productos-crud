@@ -2,28 +2,28 @@
     <div class="row mb-3">
         <label for="id" class="col-sm-2 col-form-label">Id</label>
         <div class="col-sm-10">
-            <input id="id" type="number" readonly class="form-control" />
+            <input [(ngModel)]="producto.id" name="id" id="id" type="number" readonly class="form-control" />
         </div>
     </div>
 
     <div class="row mb-3">
         <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
         <div class="col-sm-10">
-            <input id="nombre" type="text" class="form-control" />
+            <input [(ngModel)]="producto.nombre" name="nombre" id="nombre" type="text" class="form-control" />
         </div>
     </div>
 
     <div class="row mb-3">
         <label for="precio" class="col-sm-2 col-form-label">Precio</label>
         <div class="col-sm-10">
-            <input id="precio" type="number" step=".01" class="form-control" />
+            <input [(ngModel)]="producto.precio" name="precio" id="precio" type="number" step=".01" class="form-control" />
         </div>
     </div>
 
     <div class="row mb-3">
         <label for="fecha-caducidad" class="col-sm-2 col-form-label">Fecha de caducidad</label>
         <div class="col-sm-10">
-            <input id="fecha-caducidad" type="date" class="form-control" />
+            <input [(ngModel)]="producto.fechaCaducidad" name="fechaCaducidad" id="fecha-caducidad" type="date" class="form-control" />
         </div>
     </div>
 
