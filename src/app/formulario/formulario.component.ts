@@ -28,4 +28,16 @@ export class FormularioComponent implements OnInit {
     }
   }
 
+  aceptar() {
+    if(this.producto.id) {
+      console.log('Modificar', this.producto);
+    } else {
+      console.log('Añadir', this.producto)
+    }
+  }
+
+  cancelar() {
+    console.log('Volver');
+  }
+
 }
