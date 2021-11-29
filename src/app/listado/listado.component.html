@@ -9,21 +9,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Pantalla</td>
-            <td>123.45</td>
-            <td>12-10-2021</td>
-            <td>
-                <a class="btn btn-primary" href="#">Editar</a>
-                <a class="btn btn-danger" href="#">Borrar</a>
-            </td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Teclado</td>
-            <td>12.45</td>
-            <td>10-10-2021</td>
+        <tr *ngFor="let p of productos">
+            <td>{{p.id}}</td>
+            <td>{{p.nombre}}</td>
+            <td>{{p.precio | currency:'EUR' }}</td>
+            <td>{{p.fechaCaducidad | date:'yyyy-MM-dd'}}</td>
             <td>
                 <a class="btn btn-primary" href="#">Editar</a>
                 <a class="btn btn-danger" href="#">Borrar</a>
