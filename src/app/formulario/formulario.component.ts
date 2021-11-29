@@ -15,7 +15,7 @@ export class FormularioComponent implements OnInit {
     id: 0,
     nombre: '',
     precio: 0,
-    fechaCaducidad: new Date()
+    fechaCaducidad: undefined
   };
 
   constructor(private route: ActivatedRoute, private productoService: ProductoService, private location: Location) { }
