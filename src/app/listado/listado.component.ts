@@ -16,4 +16,7 @@ export class ListadoComponent implements OnInit {
     this.productoService.obtenerProductos().subscribe(productos => this.productos = productos);
   }
 
+  borrar(id: number) {
+    alert(id);
+  }
 }
