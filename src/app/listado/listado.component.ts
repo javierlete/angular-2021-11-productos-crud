@@ -13,10 +13,16 @@ export class ListadoComponent implements OnInit {
   constructor(private productoService: ProductoService) { }
 
   ngOnInit(): void {
+    this.cargarProductos();
+  }
+
+  private cargarProductos() {
     this.productoService.obtenerProductos().subscribe(productos => this.productos = productos);
   }
 
   borrar(id: number) {
-    alert(id);
+    this.productoService.borrar(id).subscribe(
+      _ => this.cargarProductos()
+    );
   }
 }
