@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Producto } from '../producto';
@@ -17,7 +18,7 @@ export class FormularioComponent implements OnInit {
     fechaCaducidad: new Date()
   };
 
-  constructor(private route: ActivatedRoute, private productoService: ProductoService) { }
+  constructor(private route: ActivatedRoute, private productoService: ProductoService, private location: Location) { }
 
   ngOnInit(): void {
     const id: number = Number(this.route.snapshot.paramMap.get('id'));
@@ -30,14 +31,18 @@ export class FormularioComponent implements OnInit {
 
   aceptar() {
     if(this.producto.id) {
-      console.log('Modificar', this.producto);
+      this.productoService.modificar(this.producto).subscribe(
+        _ => this.volver()
+      );
     } else {
-      console.log('Añadir', this.producto)
+      this.productoService.agregar(this.producto).subscribe(
+        _ => this.volver()
+      );
     }
   }
 
-  cancelar() {
-    console.log('Volver');
+  volver() {
+    this.location.back();
   }
 
 }
