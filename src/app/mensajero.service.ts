@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Mensaje } from './mensaje';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MensajeroService {
-  mensajes: string[] = [];
+  mensajes: Mensaje[] = [];
 
-  nuevo(mensaje: string): void {
+  nuevo(mensaje: Mensaje): void {
     this.mensajes.push(mensaje);
   }
 

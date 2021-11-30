@@ -10,6 +10,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { FormsModule } from '@angular/forms';
+import { MensajesComponent } from './mensajes/mensajes.component';
 
 registerLocaleData(localeEs, 'es');
 
@@ -17,7 +18,8 @@ registerLocaleData(localeEs, 'es');
   declarations: [
     AppComponent,
     ListadoComponent,
-    FormularioComponent
+    FormularioComponent,
+    MensajesComponent
   ],
   imports: [
     BrowserModule,
