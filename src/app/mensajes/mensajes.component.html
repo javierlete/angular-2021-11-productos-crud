@@ -1,9 +1,9 @@
 <div *ngFor="let mensaje of mensajero.mensajes">
-    <div class="alert alert-{{mensaje.tipo}}" role="alert">
+    <span class="text-{{mensaje.tipo}}">
         {{mensaje.texto}}
-    </div>
+    </span><br />
 </div>
 
-<button (click)="mensajero.limpiar()" class="btn btn-secondary" *ngIf="mensajero.mensajes.length">
+<button (click)="mensajero.limpiar()" class="btn btn-sm btn-secondary" *ngIf="mensajero.mensajes.length">
     Borrar mensajes
 </button>
