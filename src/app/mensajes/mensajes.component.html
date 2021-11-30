@@ -4,4 +4,6 @@
     </div>
 </div>
 
-<button class="btn btn-secondary" *ngIf="mensajero.mensajes.length">Borrar mensajes</button>
+<button (click)="mensajero.limpiar()" class="btn btn-secondary" *ngIf="mensajero.mensajes.length">
+    Borrar mensajes
+</button>
