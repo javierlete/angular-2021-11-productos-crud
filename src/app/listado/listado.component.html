@@ -1,6 +1,15 @@
 <table class="table table-striped table-hover table-bordered">
     <thead class="table-dark">
         <tr>
+            <td></td>
+            <td>
+                <input #texto (input)="buscar(texto.value)" placeholder="Búsqueda por nombre" />
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
             <th>Id</th>
             <th>Nombre</th>
             <th>Precio</th>

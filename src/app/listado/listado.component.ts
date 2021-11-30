@@ -9,6 +9,7 @@ import { ProductoService } from '../producto.service';
 })
 export class ListadoComponent implements OnInit {
   productos: Producto[] = [];
+  originales: Producto[] = [];
   
   constructor(private productoService: ProductoService) { }
 
@@ -17,12 +18,22 @@ export class ListadoComponent implements OnInit {
   }
 
   private cargarProductos() {
-    this.productoService.obtenerProductos().subscribe(productos => this.productos = productos);
+    this.productoService.obtenerProductos().subscribe(
+      productos => this.productos = this.originales = productos);
   }
 
   borrar(id: number) {
     this.productoService.borrar(id).subscribe(
       _ => this.cargarProductos()
     );
+  }
+
+  buscar(texto: string) : void {
+    console.log(texto);
+
+    this.productos = this.originales.filter(
+      producto => producto.nombre.match(new RegExp(texto, 'i')));
+    
+    console.log(this.productos);
   }
 }
