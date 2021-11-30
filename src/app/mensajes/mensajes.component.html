@@ -1,1 +1,7 @@
-<p>mensajes works!</p>
+<div *ngFor="let mensaje of mensajero.mensajes">
+    <div class="alert alert-{{mensaje.tipo}}" role="alert">
+        {{mensaje.texto}}
+    </div>
+</div>
+
+<button class="btn btn-secondary" *ngIf="mensajero.mensajes.length">Borrar mensajes</button>
